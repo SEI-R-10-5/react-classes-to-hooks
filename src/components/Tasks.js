@@ -1,19 +1,16 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class Tasks extends Component {
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    return (
-      <ul>
-        {this.props.tasks.map((task, index) => (
-          <li key={index}>{task}</li>
-        ))}
-      </ul>
-    )
-  }
+const Tasks = (props) => {
+  return (
+    <ul>
+      {props.tasks.map((task, index) => (
+        <li key={index}>
+          {task}
+          <button onClick={() => props.removeTask(index)}>Remove</button>
+        </li>
+      ))}
+    </ul>
+  )
 }
 
 export default Tasks
